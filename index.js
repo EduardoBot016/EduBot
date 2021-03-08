@@ -54,7 +54,7 @@ const _level = JSON.parse(fs.readFileSync('./database/json/level.json'))
 /******BEGIN OF MENU INPUT******/
 const { help } = require('./src/help')
 const { logomaker } = require('./database/menu/logomaker')
-const { toinmenu } = require('./src/toinmenu')
+const { edumenu } = require('./src/edumenu')
 const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
 /*const { mediamenu } = require('./database/menu/mediamenu')
@@ -78,7 +78,7 @@ const { othermenu } require('./database/menu/othermenu')*/
 /******LOAD OF VCARD INPUT******/
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:Eduardo🖤\n' // full name
+            + 'FN:Edu🖤\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
             + 'TEL;type=CELL;type=VOICE;waid=556999823806:+55 (69) 9982-3806\n' // ID do WhatsApp + número de telefone
             + 'END:VCARD'
@@ -173,15 +173,15 @@ async function starts() {
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color(' escanear o codigo qr acima '))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color(' ESCANEAR ESTE QR CODE NO WHATSAPP WEB '))
 	})
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
 	client.on('connecting', () => {
-		start('2', 'Connecting...')
+		start('2', 'Conectando...')
 	})
 	client.on('open', () => {
-		success('2', 'Connected')
+		success('2', 'Conectado')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -246,7 +246,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛Aguarde✋🏽, já estou preparando⌛',
+				wait: '⌛Aguarde✋🏽, já estou processando⌛',
 				success: 'Eai. Ficou bom seu bosta? ',
                                 levelon: '❬ ✔ ❭ *habilitar Level*',
 				leveloff: ' ❬ X ❭  *desabilitar Level*',
@@ -269,7 +269,7 @@ async function starts() {
         		const bisakah = ['Bisa','Tidak Bisa']
 		        const kapankah = ['Hari Lagi','Minggu Lagi','Bulan Lagi','Tahun Lagi']
 			const botNumber = client.user.jid
-			const ownerNumber = ["556296638900@s.whatsapp.net"] // replace this with your number
+			const ownerNumber = ["556999823806@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
 			const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
@@ -287,7 +287,7 @@ async function starts() {
 			const isOwner = ownerNumber.includes(sender)
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
-                        const NomerOwner = '556296638900@s.whatsapp.net'
+                        const NomerOwner = '556999823806@s.whatsapp.net'
                         /******ApiKey Input******/
                         const BarBarKey = 'YOUR_APIKEY'
                         /******End of ApiKey Input******/
@@ -1156,6 +1156,7 @@ case 'timer':
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
 				case 'figurinha':
+				case 'figu':
 				case 'stiker':
 				case 'sticker':
 				case 'stickergif':
