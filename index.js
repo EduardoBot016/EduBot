@@ -80,7 +80,7 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:Edu🖤\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=556999823806:+55 (69) 9982-3806\n' // ID do WhatsApp + número de telefone
+            + 'TEL;type=CELL;type=VOICE;waid=556999823806:+55 (62) 9982-3806\n' // ID do WhatsApp + número de telefone
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -173,15 +173,15 @@ async function starts() {
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color(' ESCANEAR ESTE QR CODE NO WHATSAPP WEB '))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color(' escanear o codigo qr acima '))
 	})
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
 	client.on('connecting', () => {
-		start('2', 'Conectando...')
+		start('2', 'Connecting...')
 	})
 	client.on('open', () => {
-		success('2', 'Conectado')
+		success('2', 'Connected')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -246,8 +246,8 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛Aguarde✋🏽, já estou processando⌛',
-				success: 'Eai. Ficou bom seu bosta? ',
+				wait: '⌛*ENQUANTO EU PROCESSO VEM DÁ UMA SUGADA AQUI*😏⌛',
+				success: 'ME DEVE UMA SUGADA AQUI😑✅',
                                 levelon: '❬ ✔ ❭ *habilitar Level*',
 				leveloff: ' ❬ X ❭  *desabilitar Level*',
 				levelnoton: '❬ X ❭ *level não ativo*',
@@ -259,10 +259,10 @@ async function starts() {
 				only: {
 					group: '[❗] Este comando só pode ser usado em grupos! ❌',
 					ownerG: '[❗] Este comando só pode ser usado pelo grupo proprietário! ❌',
-					ownerB: '[❗] Este comando só pode ser usado pelo Edu! ❌',
+					ownerB: '[❗] Este comando só pode ser usado pelo Eduardo! ❌',
 					admin: '[❗] Este comando só pode ser usado por administradores de grupo! ❌',
 					Badmin: '[❗] Este comando só pode ser usado quando o bot se torna administrador! ❌',
-                                        daftarB: `── 「CADASTRE-SE」 ──\nOlá como!\nVocê não está registrado no banco de dados, \n\nComando : ${prefix}daftar nome|idade\nExemplo : ${prefix}daftar Edu|18`,
+                                        daftarB: `── 「CADASTRE-SE」 ──\nOlá como!\nVocê não está registrado no banco de dados, \n\nComando : ${prefix}daftar nome|idade\nExemplo : ${prefix}daftar Eduardo|16`,
 				}
 			}
     			const apakah = ['Ya','Tidak']
@@ -356,8 +356,8 @@ case 'timer':
                 case 'bahasa':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
 				break
-				case 'Edumenu':
-					client.sendMessage(from, Edumenu(prefix, sender), text, {quoted: mek})
+				case 'edumenu':
+					client.sendMessage(from, edumenu(prefix, sender), text, {quoted: mek})
 							break
 							case 'menuadmin':
 								client.sendMessage(from, menuadmin(prefix, sender), text, {quoted: mek})
@@ -523,7 +523,7 @@ case 'timer':
 		case 'infonomor':
                client.updatePresence(from, Presence.composing) 
                  if (!isUser) return reply(mess.only.daftarB)
-                 if (args.length < 1) return reply(`Insira numeros\nExemplo : ${prefix}infonomor 556299663...`)
+                 if (args.length < 1) return reply(`Insira numeros\nExemplo : ${prefix}infonomor 55699938...`)
                 data = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=${body.slice(11)}`)
                 if (data.error) return reply(data.error)
                 if (data.result) return reply(data.result)
@@ -964,12 +964,10 @@ case 'timer':
 					reply(anu.result)
 					break
 				case 'lirik':
-				case 'lyric':
-				case 'letra':
 					if (args.length < 1) return reply('Onde estão as letras?')
                                         if (!isUser) return reply(mess.only.daftarB)
 					tels = body.slice(7)
-					anu = await fetchJson(`https://api.lyrics.ovh/v1/artist/title=${tels}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/lirik?judul=${tels}`, {method: 'get'})
 					reply(anu.result)
 					break
 			case 'igstalk':
@@ -1155,9 +1153,9 @@ case 'timer':
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
-				case 'figurinha':
-				case 'figu':
-				case 'stiker':
+ 	  		case 'stiker':
+      case 'figu':
+      case 'figurinha':
 				case 'sticker':
 				case 'stickergif':
 				case 'stikergif':
@@ -1199,7 +1197,7 @@ case 'timer':
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Falhou, no momento da conversão ${tipe} para a figurinha`)
+								reply(`❌ Falhou, no momento da conversão ${tipe} para o sticker`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -1244,7 +1242,7 @@ case 'timer':
 						fs.unlinkSync(ran)
 					})
 					break
-                	case 'paramp3':
+                	case 'tomp3':
                 	client.updatePresence(from, Presence.composing) 
                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isQuotedVideo) return reply('❌ responder vídeo hum ❌')
@@ -1314,7 +1312,7 @@ case 'timer':
                                   case 'daftar':
 					client.updatePresence(from, Presence.composing)
 					if (isUser) return reply('você já está registrado')
-					if (args.length < 1) return reply(`Parâmetro incorreto \nCommand : ${prefix}daftar nome|idade\nContoh : ${prefix}daftar Edu|18`)
+					if (args.length < 1) return reply(`Parâmetro incorreto \nCommand : ${prefix}daftar nome|idade\nContoh : ${prefix}daftar Toin|18`)
 					var reg = body.slice(8)
 					var jeneng = reg.split("|")[0];
 					var umure = reg.split("|")[1];
@@ -1491,7 +1489,7 @@ case 'timer':
 					var gh = body.slice(11)
 					var teks1 = gh.split("|")[0];
 					var teks2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`onde está o texto? exemplo ${prefix}logowolf Edu|BOT`)
+					if (args.length < 1) return reply(`onde está o texto? exemplo ${prefix}logowolf Toin|BOT`)
                                         if (!isUser) return reply(mess.only.daftarB)
 					reply(mess.wait)
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=wolflogo2&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
@@ -1509,7 +1507,7 @@ case 'timer':
 					var gh = body.slice(7)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
-					if (args.length < 1) return reply(`Cadê o texto, hum\nExemplo: ${prefix}phlogo |Edu|BOT`)
+					if (args.length < 1) return reply(`Cadê o texto, hum\nExemplo: ${prefix}phlogo |Toin|BOT`)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
@@ -1718,7 +1716,7 @@ case 'timer':
 							reply('❌ *ERROR* ❌')
 						}
 						break
-						case 'nsfwEdu':
+						case 'nsfwtoin':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
@@ -2020,7 +2018,7 @@ case 'timer':
                                         var gh = body.slice(9)
                                         var teks1 = gh.split("|")[0];
                                         var teks2 = gh.split("|")[1];
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}pubglogo Edu|BOT`)
+                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}pubglogo Toin|BOT`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
@@ -2029,7 +2027,7 @@ case 'timer':
                                 case 'herrypotter':
                                 case 'harrypotter':
                                         var gh = body.slice(12)
-                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}harrypotter EduBOT`)
+                                        if (args.length < 1) return reply(`onde está o texto hum\nExemplo: ${prefix}harrypotter ToinBOT`)
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=harry_potter&text=${gh}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
