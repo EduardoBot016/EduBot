@@ -14,5 +14,5 @@ npm cache clean -f
 npm install --dev
 npm i got
 
-echo "[*] Todas as dependências foram instaladas, execute o comando \"npm start\" para iniciar o script imediatamente"
+echo "[*] All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
 echo "Updates : fix Bugs"
