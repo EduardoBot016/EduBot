@@ -31,7 +31,7 @@ const help = (prefix) => {
   └─ ❏ ${prefix}clearall
 ◪ *FAZER*
   │
-  ├─ ❏ ${prefix}figurinha
+  ├─ ❏ ${prefix}figu
   ├─ ❏ ${prefix}figurinhagif
   ├─ ❏ ${prefix}paraimg
   ├─ ❏ ${prefix}paramp3
