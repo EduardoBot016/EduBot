@@ -1,5 +1,5 @@
 {
-  "name": "EduBot",
+  "name": "Edubot",
   "version": "0.0.2",
   "description": "Only termux",
   "main": "index.js",
@@ -17,10 +17,10 @@
     "whatsapp",
     "bot"
   ],
-  "author": "Eduardo Fagundes",
+  "author": "Eduardo",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "github:EduardoBot016/EduBot",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "@kagchi/kag-api": "^1.5.5",
     "async": "^3.2.0",
     "axios": "^0.21.1",
