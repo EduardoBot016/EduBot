@@ -964,10 +964,12 @@ case 'timer':
 					reply(anu.result)
 					break
 				case 'lirik':
+				case 'letra':
+				case 'lyric':
 					if (args.length < 1) return reply('Onde estão as letras?')
                                         if (!isUser) return reply(mess.only.daftarB)
 					tels = body.slice(7)
-					anu = await fetchJson(`https://arugaz.my.id/api/lirik?judul=${tels}`, {method: 'get'})
+					anu = await fetchJson(`https://lyricfind.com/index.php?id=63=${tels}`, {method: 'get'})
 					reply(anu.result)
 					break
 			case 'igstalk':
