@@ -80,7 +80,7 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:Edu🖤\n' // full name
             + 'ORG:Owner Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=556999823806:+55 (62) 9982-3806\n' // ID do WhatsApp + número de telefone
+            + 'TEL;type=CELL;type=VOICE;waid=556999823806:+55 (69) 9982-3806\n' // ID do WhatsApp + número de telefone
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -246,7 +246,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛*ENQUANTO EU PROCESSO VEM DÁ UMA SUGADA AQUI*😏⌛',
+				wait: '*⌛ENQUANTO EU PROCESSO VEM DÁ UMA SUGADA AQUI😏*',
 				success: 'ME DEVE UMA SUGADA AQUI😑✅',
                                 levelon: '❬ ✔ ❭ *habilitar Level*',
 				leveloff: ' ❬ X ❭  *desabilitar Level*',
