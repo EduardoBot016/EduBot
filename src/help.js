@@ -10,7 +10,7 @@ const help = (prefix) => {
 │Nome: Eduardo Fagundes
 │Telefone: (69) 99982-3806
 │Whats: wa.me/5569999823806
-│Instagram: https://bit.ly/2NOHxJK
+│Instagram: https://bit.ly/3lucdfS
 ╰══════════════
 
 ◪ *SOBRE*
@@ -44,20 +44,7 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}play
   └─ ❏ ${prefix}tts
-◪ *MÚSICA*
-  │
-  └─ ❏ ${prefix}lirik
-◪ *OUTROS*
-  │
-  ├─ ❏ ${prefix}send
-  ├─ ❏ ${prefix}wame
-  ├─ ❏ ${prefix}virtex
-  ├─ ❏ ${prefix}exe
-  ├─ ❏ ${prefix}qrcode
-  ├─ ❏ ${prefix}afk
-  ├─ ❏ ${prefix}timer
-  ├─ ❏ ${prefix}fml
-  └─ ❏ ${prefix}fml2
+
 `
 }
 
