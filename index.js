@@ -1240,7 +1240,7 @@ case 'timer':
 						fs.unlinkSync(media)
 						if (err) return reply('❌ Falha ao converter Stickers em imagens ❌')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*SATISFEITO COM ISSO FILHO DA PUTA*'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -1320,7 +1320,7 @@ case 'timer':
 					var umure = reg.split("|")[1];
 						user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`O registro foi bem sucedido com SN: TM08GK8PPHBSJDH10J\`\`\`\n\n\`\`\`\Nome: ${jeneng}\`\`\`\n\`\`\`\Número: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Idade: ${umure}\`\`\`\n\`\`\`Para usar o robôzinho por favor enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`O registro foi bem sucedido com SN: TM08GK8PPHBSJDH10J\`\`\`\n\n\`\`\`\`Nome: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Idade: ${umure}\`\`\`\n\`\`\`Para usar o bot\`\`\`Por favor\`\`\`\enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
