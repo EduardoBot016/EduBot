@@ -548,7 +548,7 @@ case 'timer':
                    case 'covid19':
                    client.updatePresence(from, Presence.composing) 
                    if (!isUser) return reply(mess.only.daftarB)
-                   data = await fetchJson(`https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/=${body.slice(7)}`)
+                   data = await fetchJson(`https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/ro/=${body.slice(7)}`)
                    if (data.result) reply(data.result)
                    hasil = `Negara : ${data.result.country}\n\nActive : ${data.result.active}\ncasesPerOneMillion : ${data.result.casesPerOneMillion}\ncritical : ${data.result.critical}\ndeathsPerOneMillion : ${data.result.deathsPerOneMillion}\nrecovered : ${data.result.recovered}\ntestPerOneMillion : ${data.result.testPerOneMillion}\ntodayCases : ${data.result.todayCases}\ntodayDeath : ${data.result.todayDeath}\ntotalCases : ${data.result.totalCases}\ntotalTest : ${data.result.totalTest}`
                    reply(hasil)
